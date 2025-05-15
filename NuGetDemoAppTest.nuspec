@@ -2,16 +2,26 @@
 <package>
   <metadata>
     <id>NuGetDemoAppTest</id>
-    <version>1.0.0</version>
-    <title>NuGetDemoAppTest k-a-i</title>
+    <version>1.1.0</version>
+    <title>NuGet Demo App Test Library</title>
     <authors>Limon0xxx</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/Limoshka8907/NuGetDemoAppTest/</projectUrl>
-    <description>Just light EF helper for working with a data k-a-i</description>
-    <releaseNotes>Release the ner Class and Docs</releaseNotes>
+    <description>A lightweight .NET library providing Entity Framework helpers for data management, integrated with WPF applications. Includes Word documents with testing documentation, installed as content files in the Docs folder. Compatible with .NET Framework 4.7.2 and above.</description>
+    <releaseNotes>Version 1.1.0: Added Word documents as content files for testing documentation, improved EF helpers, and enhanced WPF integration.</releaseNotes>
     <copyright>Copyright 2025 Limon0xxx</copyright>
-    <tags>Demo App NuGet Test KAI WPF</tags>
+    <tags>entityframework wpf testing utilities word document testplan testreport netframework csharp contentfiles</tags>
   </metadata>
+  <files>
+    <file src="Docs\Алгоритм.docx" target="contentFiles\Docs\Алгоритм.docx" />
+    <file src="Docs\Модификация.docx" target="contentFiles\Docs\Модификация.docx" />
+    <file src="Docs\Модульное-тестирование.docx" target="contentFiles\Docs\Модульное-тестирование.docx" />
+    <file src="Docs\Организационная стратегия тестирования.docx" target="contentFiles\Docs\Организационная стратегия тестирования.docx" />
+    <file src="Docs\Отладка точки останова.docx" target="contentFiles\Docs\Отладка точки останова.docx" />
+    <file src="Docs\Отчёт о ходе тестирования.docx" target="contentFiles\Docs\Отчёт о ходе тестирования.docx" />
+    <file src="Docs\План тестирования.docx" target="contentFiles\Docs\План тестирования.docx" />
+    <file src="Docs\Результат тестирования.docx" target="contentFiles\Docs\Результат тестирования.docx" />
+    <file src="Docs\Руководство по установке.docx" target="contentFiles\Docs\Руководство по установке.docx" />
+  </files>
 </package>
-
