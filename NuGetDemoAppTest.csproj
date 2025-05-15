@@ -51,15 +51,42 @@
     <Folder Include="App\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Docs\Алгоритм.docx" />
-    <Resource Include="Docs\Модификация.docx" />
-    <Resource Include="Docs\Модульное-тестирование.docx" />
-    <Resource Include="Docs\Организационная стратегия тестирования.docx" />
-    <Resource Include="Docs\Отладка точки останова.docx" />
-    <Resource Include="Docs\Отчёт о ходе тестирования.docx" />
-    <Resource Include="Docs\План тестирования.docx" />
-    <Resource Include="Docs\Результат тестирования.docx" />
-    <Resource Include="Docs\Руководство по установке.docx" />
+    <Content Include="Docs\Алгоритм.docx">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\Docs\Алгоритм.docx</PackagePath>
+    </Content>
+    <Content Include="Docs\Модификация.docx">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\Docs\Модификация.docx</PackagePath>
+    </Content>
+    <Content Include="Docs\Модульное-тестирование.docx">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\Docs\Модульное-тестирование.docx</PackagePath>
+    </Content>
+    <Content Include="Docs\Организационная стратегия тестирования.docx">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\Docs\Организационная стратегия тестирования.docx</PackagePath>
+    </Content>
+    <Content Include="Docs\Отладка точки останова.docx">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\Docs\Отладка точки останова.docx</PackagePath>
+    </Content>
+    <Content Include="Docs\Отчёт о ходе тестирования.docx">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\Docs\Отчёт о ходе тестирования.docx</PackagePath>
+    </Content>
+    <Content Include="Docs\План тестирования.docx">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\Docs\План тестирования.docx</PackagePath>
+    </Content>
+    <Content Include="Docs\Результат тестирования.docx">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\Docs\Результат тестирования.docx</PackagePath>
+    </Content>
+    <Content Include="Docs\Руководство по установке.docx">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\Docs\Руководство по установке.docx</PackagePath>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

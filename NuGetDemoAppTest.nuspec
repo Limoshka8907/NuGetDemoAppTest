@@ -7,11 +7,11 @@
     <authors>Limon0xxx</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/johndoe/json-utility</projectUrl>
-    <description>A lightweight .NET library for JSON serialization and deserialization, supporting .NET Standard 2.0 and above.</description>
-    <releaseNotes>Initial release with support for JSON serialization, deserialization, and custom parsing.</releaseNotes>
-    <copyright>Copyright 2025 John Doe</copyright>
-    <tags>json serialization deserialization netstandard csharp dotnet</tags>
+    <projectUrl>https://github.com/Limoshka8907/NuGetDemoAppTest/</projectUrl>
+    <description>Just light EF helper for working with a data k-a-i</description>
+    <releaseNotes>Release the ner Class and Docs</releaseNotes>
+    <copyright>Copyright 2025 Limon0xxx</copyright>
+    <tags>Demo App NuGet Test KAI WPF</tags>
   </metadata>
 </package>
 
