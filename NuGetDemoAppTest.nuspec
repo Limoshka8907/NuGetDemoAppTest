@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>NuGetDemoAppTest</id>
+    <version>1.0.0</version>
+    <title>NuGetDemoAppTest k-a-i</title>
+    <authors>Limon0xxx</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/johndoe/json-utility</projectUrl>
+    <description>A lightweight .NET library for JSON serialization and deserialization, supporting .NET Standard 2.0 and above.</description>
+    <releaseNotes>Initial release with support for JSON serialization, deserialization, and custom parsing.</releaseNotes>
+    <copyright>Copyright 2025 John Doe</copyright>
+    <tags>json serialization deserialization netstandard csharp dotnet</tags>
+  </metadata>
+</package>
+
