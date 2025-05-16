@@ -1,0 +1,276 @@
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+
+namespace ShablonDemo
+{
+    public partial class UserWindow : Window
+    {
+        private readonly AppDbContext _context;
+
+        public UserWindow()
+        {
+            InitializeComponent();
+            try
+            {
+                _context = new AppDbContext();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка поделючения к БД {ex.Message}");
+            }
+            LoadDataGrid1();
+            LoadDataGrid2();
+        }
+
+        private void LoadDataGrid1()
+        {
+            try
+            {
+                UsersDataGrid.Columns.Clear();
+                UsersDataGrid.AutoGenerateColumns = false;
+
+                var columns = new[]
+                {
+                    new { Header = "ID", BindingPath = "UserID" },
+                    new { Header = "ID Менеджера", BindingPath = "ManagerID" },
+                    new { Header = "Логин", BindingPath = "Login" },
+                    new { Header = "Пароль", BindingPath = "Password" },
+                    new { Header = "Менеджер", BindingPath = "Manager.Name" }
+                };
+
+                // Создаём и добавляем колонки из списка
+                foreach (var col in columns)
+                {
+                    UsersDataGrid.Columns.Add(new DataGridTextColumn
+                    {
+                        Header = col.Header,
+                        Binding = new System.Windows.Data.Binding(col.BindingPath)
+                    });
+                }
+
+                // Загружаем данные с включением связанных данных менеджера
+                UsersDataGrid.ItemsSource = _context.Users.Include(u => u.Manager).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки данных: {ex.Message}");
+            }
+
+
+        }
+
+        private void LoadDataGrid2()
+        {
+            try
+            {
+                ManagersDataGrid.Columns.Clear();
+                ManagersDataGrid.AutoGenerateColumns = false;
+
+                var columns2 = new[]
+                {
+                    new {Header = "ID", BindingPath = "ManagerID"},
+                    new {Header = "Name", BindingPath = "Name"}
+                };
+                // Создаём и добавляем колонки из списка
+                foreach (var col in columns2)
+                {
+                    ManagersDataGrid.Columns.Add(new DataGridTextColumn
+                    {
+                        Header = col.Header,
+                        Binding = new System.Windows.Data.Binding(col.BindingPath)
+                    });
+                }
+
+                ManagersDataGrid.ItemsSource = _context.Managers.ToList();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки данных: {ex.Message}");
+            }
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(ManagerIDTextBox.Text) &&
+                    !string.IsNullOrWhiteSpace(LoginTextBox.Text) &&
+                    !string.IsNullOrWhiteSpace(PasswordTextBox.Text))
+                {
+                    if (!int.TryParse(ManagerIDTextBox.Text, out int managerId))
+                    {
+                        MessageBox.Show("ID менеджера должен быть числом!");
+                        return;
+                    }
+                    using (AppDbContext context = new AppDbContext())
+                    {
+                        var newUser = new User
+                        {
+                            ManagerID = managerId,
+                            Login = LoginTextBox.Text,
+                            Password = PasswordTextBox.Text
+                        };
+                        _context.Users.Add(newUser);
+                        _context.SaveChanges();
+                    }
+                    LoadDataGrid1();
+                    LoadDataGrid2();
+
+                    ClearInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Заполните все поля!");
+                }
+            }
+            catch (Exception ex)
+            {
+                _context.Dispose();
+                MessageBox.Show($"Ошибка добавления пользователя: {ex.Message}");
+            }
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _context.SaveChanges();
+                LoadDataGrid1();
+                MessageBox.Show("Изменения сохранены!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка сохранения изменений: {ex.Message}");
+            }
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (UsersDataGrid.SelectedItem is User selectedUser)
+                {
+                    _context.Users.Remove(selectedUser);
+                    _context.SaveChanges();
+                    LoadDataGrid1();
+
+                    ClearInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Выберите пользователя для удаления!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка удаления пользователя: {ex.Message}");
+            }
+        }
+
+        private void ClearInputs()
+        {
+            try
+            {
+                ManagerIDTextBox.Text = string.Empty;
+                LoginTextBox.Text = string.Empty;
+                PasswordTextBox.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка очистки полей: {ex.Message}");
+            }
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            new UserAuthWindow().Show();
+            this.Close();
+        }
+
+        private void TabItem_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ManagersDataGrid.ItemsSource = _context.Managers.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки данных: {ex.Message}");
+            }
+        }
+
+        private void ProfileTab_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                if (UserStorage.User != null)
+                {
+                    ProfileTxtBox1.Text = UserStorage.User.Login;
+                    ProfileTxtBox2.Text = UserStorage.User.Password;
+                    ProfileTxtBox3.Text = UserStorage.User.ManagerID.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь не найден!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки профиля: {ex.Message}");
+            }
+        }
+
+        private void SaveProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (UserStorage.User != null)
+                {
+                    var userModel = UserStorage.User;
+                    if (string.IsNullOrWhiteSpace(ProfileTxtBox1.Text) ||
+                        string.IsNullOrWhiteSpace(ProfileTxtBox2.Text) ||
+                        string.IsNullOrWhiteSpace(ProfileTxtBox3.Text))
+                    {
+                        MessageBox.Show("Заполните обязательные поля: Имя, Фамилия, Email!");
+                        return;
+                    }
+
+                    userModel.Login = ProfileTxtBox1.Text;
+                    userModel.Password = ProfileTxtBox2.Text;
+                    userModel.ManagerID = int.Parse(ProfileTxtBox3.Text);
+
+                    _context.Users.AddOrUpdate(userModel);
+                    _context.SaveChanges();
+
+                    UserStorage.User = userModel;
+                    MessageBox.Show("Профиль успешно сохранен!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь не найден!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при сохранении профиля: {ex.Message}");
+            }
+        }
+
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            _context?.Dispose();
+        }
+    }
+ public class UserStorage
+ {
+     public static User User { get; set; }
+ }
+
+}

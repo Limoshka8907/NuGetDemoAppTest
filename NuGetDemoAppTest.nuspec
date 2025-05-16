@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <metadata>
-    <id>NuGetDemoAppTest2</id>
-    <version>1.2.0</version>
+    <id>NuGetDemoAppTest</id>
+    <version>1.3.0</version>
     <title>NuGet Demo App Test Library</title>
     <authors>Limon0xxx</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/Limoshka8907/NuGetDemoAppTest/</projectUrl>
     <description>A lightweight .NET library providing Entity Framework helpers for data management, integrated with WPF applications. Includes Word documents with testing documentation, installed as content files in the Docs folder. Compatible with .NET Framework 4.7.2 and above.</description>
-    <releaseNotes>Version 1.2.0: Added Word documents as content files for testing documentation, improved EF helpers, and enhanced WPF integration.</releaseNotes>
+    <releaseNotes>Version 1.3.0: Added Word documents as content files for testing documentation, improved EF helpers, and enhanced WPF integration.</releaseNotes>
     <copyright>Copyright 2025 Limon0xxx</copyright>
     <tags>entityframework wpf testing utilities word document testplan testreport netframework csharp contentfiles</tags>
+    <!-- Опционально: добавление README.md для улучшения документации -->
+    <readme>README.md</readme>
   </metadata>
   <files>
-    <file src="Docs\Алгоритм.docx" target="contentFiles\Docs\Алгоритм.docx" />
-    <file src="Docs\Модификация.docx" target="contentFiles\Docs\Модификация.docx" />
-    <file src="Docs\Модульное-тестирование.docx" target="contentFiles\Docs\Модульное-тестирование.docx" />
-    <file src="Docs\Организационная стратегия тестирования.docx" target="contentFiles\Docs\Организационная стратегия тестирования.docx" />
-    <file src="Docs\Отладка точки останова.docx" target="contentFiles\Docs\Отладка точки останова.docx" />
-    <file src="Docs\Отчёт о ходе тестирования.docx" target="contentFiles\Docs\Отчёт о ходе тестирования.docx" />
-    <file src="Docs\План тестирования.docx" target="contentFiles\Docs\План тестирования.docx" />
-    <file src="Docs\Результат тестирования.docx" target="contentFiles\Docs\Результат тестирования.docx" />
-    <file src="Docs\Руководство по установке.docx" target="contentFiles\Docs\Руководство по установке.docx" />
+    <file src="Docs\Алгоритм.docx" target="content\Docs\Алгоритм.docx" />
+    <file src="Docs\Модификация.docx" target="content\Docs\Модификация.docx" />
+    <file src="Docs\Модульное-тестирование.docx" target="content\Docs\Модульное-тестирование.docx" />
+    <file src="Docs\Организационная стратегия тестирования.docx" target="content\Docs\Организационная стратегия тестирования.docx" />
+    <file src="Docs\Отладка точки останова.docx" target="content\Docs\Отладка точки останова.docx" />
+    <file src="Docs\Отчёт о ходе тестирования.docx" target="content\Docs\Отчёт о ходе тестирования.docx" />
+    <file src="Docs\План тестирования.docx" target="content\Docs\План тестирования.docx" />
+    <file src="Docs\Результат тестирования.docx" target="content\Docs\Результат тестирования.docx" />
+    <file src="Docs\Руководство по установке.docx" target="content\Docs\Руководство по установке.docx" />
+    <!-- Опционально: добавление README.md -->
+    <file src="README.md" target="" />
   </files>
 </package>
