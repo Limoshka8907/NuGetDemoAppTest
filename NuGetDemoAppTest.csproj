@@ -57,15 +57,15 @@
     <Content Include="Docs\UserWindowXAML.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Docs\ДЭ_ДОК.docx" />
-    <None Include="Docs\Запрос.docx" />
-    <None Include="Docs\Модификация.docx" />
-    <None Include="Docs\Модульное тестирование.docx" />
-    <None Include="Docs\Отладка.docx" />
-    <None Include="Docs\Отчет_о_результатах_тестирования.docx" />
-    <None Include="Docs\План тестирования.docx" />
-    <None Include="Docs\Руководство по установке.docx" />
-    <None Include="Docs\Словесное описание алгоритма.docx" />
+    <Content Include="Docs\ДЭ_ДОК.docx" />
+    <Content Include="Docs\Запрос.docx" />
+    <Content Include="Docs\Модификация.docx" />
+    <Content Include="Docs\Модульное тестирование.docx" />
+    <Content Include="Docs\Отладка.docx" />
+    <Content Include="Docs\Отчет_о_результатах_тестирования.docx" />
+    <Content Include="Docs\План тестирования.docx" />
+    <Content Include="Docs\Руководство по установке.docx" />
+    <Content Include="Docs\Словесное описание алгоритма.docx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
