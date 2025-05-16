@@ -51,42 +51,21 @@
     <Folder Include="App\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Docs\Алгоритм.docx">
-      <Pack>true</Pack>
-      <PackagePath>contentFiles\Docs\Алгоритм.docx</PackagePath>
-    </Content>
-    <Content Include="Docs\Модификация.docx">
-      <Pack>true</Pack>
-      <PackagePath>contentFiles\Docs\Модификация.docx</PackagePath>
-    </Content>
-    <Content Include="Docs\Модульное-тестирование.docx">
-      <Pack>true</Pack>
-      <PackagePath>contentFiles\Docs\Модульное-тестирование.docx</PackagePath>
-    </Content>
-    <Content Include="Docs\Организационная стратегия тестирования.docx">
-      <Pack>true</Pack>
-      <PackagePath>contentFiles\Docs\Организационная стратегия тестирования.docx</PackagePath>
-    </Content>
-    <Content Include="Docs\Отладка точки останова.docx">
-      <Pack>true</Pack>
-      <PackagePath>contentFiles\Docs\Отладка точки останова.docx</PackagePath>
-    </Content>
-    <Content Include="Docs\Отчёт о ходе тестирования.docx">
-      <Pack>true</Pack>
-      <PackagePath>contentFiles\Docs\Отчёт о ходе тестирования.docx</PackagePath>
-    </Content>
-    <Content Include="Docs\План тестирования.docx">
-      <Pack>true</Pack>
-      <PackagePath>contentFiles\Docs\План тестирования.docx</PackagePath>
-    </Content>
-    <Content Include="Docs\Результат тестирования.docx">
-      <Pack>true</Pack>
-      <PackagePath>contentFiles\Docs\Результат тестирования.docx</PackagePath>
-    </Content>
-    <Content Include="Docs\Руководство по установке.docx">
-      <Pack>true</Pack>
-      <PackagePath>contentFiles\Docs\Руководство по установке.docx</PackagePath>
-    </Content>
+    <Content Include="Docs\AuthCS.txt" />
+    <Content Include="Docs\AuthXAML.txt" />
+    <Content Include="Docs\UserWindowCS.txt" />
+    <Content Include="Docs\UserWindowXAML.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Docs\ДЭ_ДОК.docx" />
+    <None Include="Docs\Запрос.docx" />
+    <None Include="Docs\Модификация.docx" />
+    <None Include="Docs\Модульное тестирование.docx" />
+    <None Include="Docs\Отладка.docx" />
+    <None Include="Docs\Отчет_о_результатах_тестирования.docx" />
+    <None Include="Docs\План тестирования.docx" />
+    <None Include="Docs\Руководство по установке.docx" />
+    <None Include="Docs\Словесное описание алгоритма.docx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
